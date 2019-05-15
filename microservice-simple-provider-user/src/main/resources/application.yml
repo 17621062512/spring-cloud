@@ -1,0 +1,37 @@
+server:
+  port: 8000
+
+spring:
+  #mysql配置
+  datasource:
+    username: root
+    password: li0512/*
+    url: jdbc:mysql://localhost:3306/leemon-cloud?serverTimezone=GMT%2b8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #JPA配置
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+#日志配置
+logging:
+  level:
+    root: info
+      # 配置日志级别，让hibernate打印出执行的SQL参数
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        #开放所有端点
+        include: '*'
+  endpoint:
+    #是否显示健康检查详情
+    health:
+      show-details: always
