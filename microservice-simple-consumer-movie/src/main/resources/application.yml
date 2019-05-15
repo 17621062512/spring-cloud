@@ -1,2 +1,18 @@
 server:
   port: 8001
+
+
+eureka:
+  client:
+    #指定eureka server通信地址，把该微服务注册到eureka server上
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+  #是否注册IP到eureka server，默认false,为true:注册ip地址到eureka server,为false:注册主机名到eureka server
+  instance:
+    prefer-ip-address: false
+
+
+spring:
+  application:
+    #指定注册到eureka server上的服务名称
+    name: microservice-consumer-movie

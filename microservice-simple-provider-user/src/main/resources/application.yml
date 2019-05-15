@@ -16,6 +16,11 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+  #指定注册到eureka server上的服务名称
+  application:
+    name: microservice-provider-user
+
+
 #日志配置
 logging:
   level:
@@ -35,3 +40,13 @@ management:
     #是否显示健康检查详情
     health:
       show-details: always
+
+#Eureka 配置
+eureka:
+  client:
+    service-url:
+      #指定eureka server通信地址，把该微服务注册到eureka server上
+      defaultZone: http://localhost:8888/eureka/
+  #是否注册IP到eureka server，默认false,为true:注册ip地址到eureka server,为false:注册主机名到eureka server
+  instance:
+    prefer-ip-address: true
