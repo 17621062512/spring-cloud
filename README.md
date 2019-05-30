@@ -15,5 +15,25 @@
 - 从`springCloud`的`Dalston`版本(不包含该版本)之后,  
 `@EnableEurekaClient`注解可以省略掉
 
+- `*.yml`配置文件支持使用三个短横线分割文档块
+    ```yml
+    server:
+      port: 8082
+    spring:
+      profiles:
+        active: dev
+    ---
+    spring:
+      profiles: dev
+    server:
+      port: 8083
+    ---
+    spring:
+      profiles: prod
+    server:
+      port: 8084
+    ---
+    ```
+
 `eureka`通过心跳检查、客户端缓存等机制，  
 提高了系统的灵活性、可靠性、伸缩性

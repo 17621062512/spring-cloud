@@ -22,6 +22,7 @@
         <module>microservice-simple-provider-user</module>
         <module>microservice-simple-consumer-movie</module>
         <module>microservice-discovery-eureka</module>
+        <module>microservice-discovery-eureka-ha</module>
     </modules>
 
     <properties>
