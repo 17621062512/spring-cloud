@@ -1,0 +1,17 @@
+eureka:
+  client:
+    # 是否要注册到其他Eureka Server实例
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://leemon:123321@localhost:7777/eureka/
+
+spring:
+  security:
+    user:
+      name: leemon
+      password: 123321
+
+
+server:
+  port: 7777
