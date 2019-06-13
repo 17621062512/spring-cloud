@@ -1,0 +1,28 @@
+server:
+  port: 5550
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    prefer-ip-address: true
+ribbon:
+  eager-load:
+    enabled: true
+    clients: microservice-provider-user
+microservice-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
+feign:
+  client:
+    config:
+      microservice-provider-user:
+        loggerLevel: full
+
+logging:
+  level:
+    com.leemon.feign.feign.UserFeignClient: debug
