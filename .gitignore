@@ -11,4 +11,4 @@ mvnw
 mvnw.*
 .mvn/
 */.gitignore
-/target/
+*/target/
