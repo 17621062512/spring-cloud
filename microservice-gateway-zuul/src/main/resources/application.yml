@@ -1,0 +1,19 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
